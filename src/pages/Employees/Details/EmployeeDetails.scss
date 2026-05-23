@@ -1,0 +1,34 @@
+.employee-details {
+  margin: -36px 24px;
+  border-radius: 5px;
+  background: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100vh - 120px);
+}
+@media screen and (max-width: 768px) {
+  .employee-details {
+    margin: -36px 0px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    height: 100%;
+  }
+}
+.createButton {
+  width: 128px !important;
+}
+@media screen and (max-width: 768px) {
+  .createButton {
+    width: 100% !important;
+  }
+}
+

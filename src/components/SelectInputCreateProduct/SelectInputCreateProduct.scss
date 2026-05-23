@@ -1,0 +1,102 @@
+.selector-with-label-create {
+  position: relative;
+  font-family: "Arial", sans-serif;
+  width: 100%;
+  .input-label-select-create {
+    display: flex;
+    padding: 10px 14px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+    position: relative;
+    color: #333;
+    border-radius: 6px;
+    background: var(--White, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Text-Color, #7b7b7b);
+    font-family: Chillax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    &:after {
+      content: url("../../assets/svg/SelectArrow.svg");
+      position: absolute;
+      right: 14px;
+      top: 0;
+      transform: translateY(57%);
+      pointer-events: none;
+    }
+  }
+
+  .select-field-create {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 21px;
+    padding: 0px !important;
+    padding-left: 4px !important;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .selector-with-label-create {
+    position: relative;
+    font-family: "Arial", sans-serif;
+    width: 100%;
+    .input-label-select-create {
+      display: flex;
+      padding: 10px 0px;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 0 0;
+      position: relative;
+      color: #333;
+      border-radius: 6px;
+      background: var(--White, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--Text-Color, #7b7b7b);
+      font-family: Chillax;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      gap: 15px;
+      &:after {
+        content: url("../../assets/svg/SelectArrow.svg");
+        position: absolute;
+        right: 14px;
+        top: 0;
+        transform: translateY(57%);
+        pointer-events: none;
+      }
+    }
+
+    .select-field-create {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      height: 21px;
+      padding: 0px !important;
+      padding-left: 4px !important;
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+  }
+}

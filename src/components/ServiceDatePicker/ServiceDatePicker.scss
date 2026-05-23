@@ -1,0 +1,45 @@
+.date-picker-with-label {
+  position: relative;
+  font-family: "Arial", sans-serif;
+
+  .input-label-date {
+    display: flex;
+    padding: 10px 14px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+    position: relative;
+    color: #333;
+    border-radius: 6px;
+    background: var(--White, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Text-Color, #7b7b7b);
+    /* Paragraph */
+    font-family: Chillax;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 140% */
+  }
+
+  .date-field {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    padding: 0px !important;
+    padding-left: 4px !important;
+    height: 16px;
+    color: #333;
+    cursor: pointer;
+    option {
+      width: 120%;
+    }
+  }
+}

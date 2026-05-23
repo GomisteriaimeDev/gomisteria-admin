@@ -1,0 +1,18 @@
+.privacyPolicyWrapper {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  gap: 40px;
+  max-width: 820px;
+  padding: 60px 0px;
+}
+.privacy-policy-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  align-self: stretch;
+}

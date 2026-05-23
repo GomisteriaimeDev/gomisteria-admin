@@ -1,0 +1,36 @@
+h1, h2, h3, h4, h5, h6 {
+    &.bold {
+      font-weight: bold;
+    }
+  }
+
+  h1 {
+    color: var(--Primary, #1B2443);
+
+    /* Heading 1 */
+    font-family: Chillax;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 46px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }

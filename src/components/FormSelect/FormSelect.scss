@@ -1,0 +1,30 @@
+.select {
+  display: flex;
+  padding: 14px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  flex: 1 0 0;
+  border-radius: 2px;
+  background: var(--Light-Grey, #f5f5f6);
+  border: none;
+  width: 100% !important;
+  appearance: none;
+  background-image: url("../../assets/svg/DropdownArrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 24px;
+}
+
+.select-option {
+  display: flex;
+  padding: 14px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  flex: 1 0 0;
+  border-radius: 2px;
+  background: var(--Light-Grey, #f5f5f6);
+  border: none;
+  width: 100%;
+}

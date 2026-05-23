@@ -1,0 +1,191 @@
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  .sendingMail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    .sendingMailItem {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+  .rightSideActions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .rightSide {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 15px;
+    .sendingMail {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .sendingMailItem {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    .rightSideActions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+}
+.modal {
+  display: flex; /* Use flexbox to center the modal */
+  align-items: center; /* Vertically center the modal */
+  justify-content: center; /* Horizontally center the modal */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 9999999;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 40px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Box shadow for a better look */
+  animation: fadeIn 0.3s; /* Animation for fade-in effect */
+  p {
+    span {
+      color: #000;
+      font-family: Chillax;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+    }
+  }
+}
+.modal-top {
+  display: flex;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}
+.modal-content-msg {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 16px;
+  border: 1px solid #888;
+  width: 80%;
+  height: fit-content;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  p {
+    span {
+      color: #000;
+      font-family: Chillax;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+    }
+  }
+}
+#subject {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.ql-container {
+  height: 150px !important; // Adjust this value to make the editor larger or smaller
+}
+#phoneMessage {
+  // height: 150px !important; 
+  padding: 8px;// Adjust this value to make the editor larger or smaller
+}
+
+.ql-editor {
+  min-height: 150px; // Adjust this value to set a minimum height
+}
+.modalActions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 40px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content p {
+  margin: 10px 0;
+}
+.status-cell {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.smsHeader{
+  display: flex;flex-direction: column;
+  gap: 4px;
+}
+.sms-credit-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.char-counter {
+  margin-top: 4px;
+  font-size: 12px;
+  text-align: right;
+  color: #6b7280; // neutral gray
+
+  &.over-limit {
+    color: #dc2626; // red when over 160
+    font-weight: 600;
+  }
+}

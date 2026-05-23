@@ -1,0 +1,138 @@
+.singlengarkesas {
+  margin: -36px 24px;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100vh - 120px);
+  a {
+    padding-top: 24px;
+    padding-left: 24px;
+  }
+}
+
+.ngarkesaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 24px;
+  width: 50%;
+}
+
+.ngarkesaDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  h5 {
+    margin: unset;
+    margin-top: 24px;
+  }
+}
+.ngarkesaInfoDetails {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  justify-content: space-between;
+  .information {
+    width: 100% !important;
+  }
+  .ngarkesaInfoDetailsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 178.141%;
+    width: 100%;
+    span {
+      color: var(--Primary, #1b2443);
+      font-family: Chillax;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px; /* 114.286% */
+    }
+  }
+}
+
+.ngarkesaInfoHeader {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  .orderNumberInfo {
+    color: #474d66;
+    font-family: Chillax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    span {
+      color: var(--Secondary, #1e8ca5);
+    }
+  }
+  .orderStatusInfo {
+    color: #474d66;
+    font-family: Chillax;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+}
+.products-section-ngarkesa-details {
+  width: 100%;
+  h5 {
+    padding-left: 24px;
+  }
+}
+
+.products-section-ngarkesa-details table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.products-section-ngarkesa-details th,
+.products-section-ngarkesa-details td {
+  border-bottom: 1px solid #dcdcdc;
+  background: #fafafa;
+  padding: 10px;
+  text-align: left;
+  &:first-child {
+    padding-left: 32px;
+  }
+}
+
+.modal-footer-ngarkesa {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  width: 30%;
+  align-self: flex-end;
+}
+.addButton {
+  width: fit-content;
+  padding: 24px;
+}
+
+.removeProductBtn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-family: Chillax;
+  font-size: 13px;
+  font-weight: 500;
+  &:hover {
+    background: #c0392b;
+  }
+}

@@ -1,0 +1,404 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  color: #1b2443;
+}
+
+p {
+  color: #7b7b7b;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+/* Wrap: fluid and centered */
+.invoice-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* remove “PDF zoom” + hard offsets */
+  scale: 1;
+  margin-left: 0;
+
+  /* keep room if you have a sidebar; shrink nicely */
+  padding: 0 16px;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Invoice: fluid width, with a sensible max */
+.invoice {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #f5f5f6;
+  gap: 40px;
+  scale: 1.2;
+  width: 100%;
+  max-width: 794px; /* keeps your “PDF-like” feel on desktop */
+  margin-left: 100px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+/* Top area */
+.invoice-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.invoice-logoPlaceholder {
+  width: 226px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #1b2443;
+  flex: 0 0 auto;
+}
+
+/* Main info: allow wrap */
+.invoice-main-information {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Data blocks: switch to grid so it collapses cleanly */
+.invoice-data {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensure items stretch equally */
+  gap: 16px 24px;
+  align-items: stretch; /* Stretch items to take up as much space as possible */
+}
+.qrCode {
+  width: 100% !important;
+  @media screen and (max-width: 768px) {
+    width: auto !important;
+  }
+}
+.invoice-data-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch items to take up as much space as possible */
+  gap: 10px;
+  min-width: 0;
+  width: 100%;
+
+  label {
+    color: #1b2443;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+
+.invoice-section-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+}
+
+.invoice-information {
+  color: #7b7b7b;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  word-break: break-word;
+
+  span {
+    color: #1e8ca5;
+  }
+}
+
+/* QR: responsive sizing */
+.qrCode {
+  width: clamp(96px, 18vw, 140px);
+  height: clamp(96px, 18vw, 140px);
+  object-fit: contain;
+}
+
+.qrPlaceholder {
+  width: clamp(96px, 18vw, 140px);
+  height: clamp(96px, 18vw, 140px);
+  border: 1px dashed #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7b7b7b;
+}
+
+/* Products list */
+.invoice-products {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.invoice-product {
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  background: #f5f5f6;
+  gap: 12px;
+
+  /* allow stacking when needed */
+  flex-wrap: wrap;
+}
+
+.product-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  flex: 1 1 420px;
+}
+
+.product-data-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-right: 10px;
+  background: #ffffff;
+
+  &.placeholder {
+    border: 1px dashed #d9d9d9;
+  }
+}
+
+.product-information {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+
+  p {
+    color: #1b2443;
+    font-weight: 600;
+    margin: 0;
+    word-break: break-word;
+  }
+}
+
+.invoice-product-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.invoice-product-price {
+  color: #1e8ca5;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+
+  /* on wrap, keep it aligned nicely */
+  margin-left: auto;
+}
+
+/* Totals section */
+.invoice-right-middle {
+  display: flex;
+  width: 340px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.invoice-price-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+}
+
+.invoice-price-details-item,
+.invoice-price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.invoice-price-details-item {
+  p {
+    color: #1b2443;
+    margin: 0;
+  }
+
+  span {
+    color: #1e8ca5;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.invoice-price-total {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 10px;
+
+  h6 {
+    margin: 0;
+    color: #1b2443;
+  }
+
+  span {
+    color: #1e8ca5;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+}
+
+/* Buttons */
+.invoice-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* ====== Breakpoints ====== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .invoice-wrapper {
+    padding: 0 12px;
+  }
+
+  .invoice {
+    padding: 24px;
+    gap: 28px;
+  }
+
+  .invoice-data {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-right-middle {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .invoice {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .invoice-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .invoice-logoPlaceholder {
+    width: 100%;
+  }
+
+  .invoice-main-information {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .invoice-product {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .product-data {
+    flex: 1 1 100%;
+  }
+
+  .invoice-product-price {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 380px) {
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .invoice-price-total span {
+    font-size: 16px;
+  }
+}
+.selectionsSales {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.assignEmployee {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  gap: 6px;
+  label {
+    font-size: 12px;
+    color: #1b2443;
+    font-weight: 600;
+  }
+
+  select {
+    min-width: 220px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+    padding: 0 12px;
+    outline: none;
+    background: #fff;
+  }
+}
+
+.invoice-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}

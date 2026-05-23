@@ -1,0 +1,248 @@
+.product-details {
+  margin: -36px 24px;
+  border-radius: 5px;
+  background: #fff;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100vh - 120px);
+  gap: 20px;
+
+  .edit-mode {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    row-gap: 24px;
+  }
+  .details {
+    display: flex;
+    gap: 24px;
+  }
+  .image-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+    height: fit-content;
+    .image-item {
+      position: relative;
+      width: 25%;
+      height: auto;
+      overflow: hidden;
+      .customFIleInputImage {
+        width: 30px;
+        &:hover {
+          filter: unset;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+        transition: filter 0.3s;
+      }
+
+      &:hover img {
+        filter: blur(2px) brightness(0.8);
+      }
+
+      .x {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 9999;
+        filter: unset;
+        background: #fff;
+        border-radius: 100%;
+      }
+
+      &:hover .x {
+        opacity: 1;
+        filter: unset;
+      }
+    }
+  }
+}
+
+.information {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: fit-content;
+  gap: 4px;
+  flex: 1 1 45%;
+  label {
+    font-weight: 600;
+  }
+  p {
+    margin-bottom: unset !important;
+  }
+}
+.actionButtons {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.deleteButton {
+  background: var(--Red);
+}
+
+.images {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+
+
+.customFileInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.detailInput {
+  flex: 1 0 22%;
+}
+
+@media screen and (max-width: 768px) {
+  .product-details {
+    margin: -36px 0px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    gap: 20px;
+
+    .edit-mode {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 32px;
+      row-gap: 24px;
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+    .image-list {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      max-width: 100%;
+      height: fit-content;
+      .image-item {
+        position: relative;
+        width: 28%;
+        height: auto;
+        overflow: hidden;
+        .customFIleInputImage {
+          width: 30px;
+          &:hover {
+            filter: unset;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+          transition: filter 0.3s;
+        }
+
+        &:hover img {
+          filter: blur(2px) brightness(0.8);
+        }
+
+        .x {
+          position: absolute;
+          top: 2px;
+          right: 2px;
+          width: 42px;
+          height: 42px;
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.3s;
+          z-index: 9999;
+          filter: unset;
+          background: #fff;
+          border-radius: 100%;
+        }
+
+        &:hover .x {
+          opacity: 1;
+          filter: unset;
+        }
+      }
+    }
+  }
+
+  .information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: fit-content;
+    gap: 4px;
+    flex: 1 178.141%;
+    label {
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: unset !important;
+    }
+  }
+  .actionButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .deleteButton {
+    background: var(--Red);
+  }
+
+  .images {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+  }
+
+
+
+  
+  .customFileInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .detailInput {
+    flex: 1 0 22%;
+  }
+}

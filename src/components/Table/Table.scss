@@ -1,0 +1,206 @@
+// styles/Table.scss
+.table-container {
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 30px 0px;
+  /* This prevents it from “pushing” outside parent flex layouts */
+  min-width: 0;
+
+  /* If content is wider, scroll inside table instead of page overflow */
+  overflow-x: auto;
+}
+.table-cell--select {
+  flex: 0 0 44px; /* fixed width just for checkbox */
+  width: 44px;
+  max-width: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column-search{
+  width: 100%;
+}
+.table-header-wrapper{
+  width: 100%;
+}
+.table-header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 14px 40px;
+  background: white;
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  .table-cell {
+    color: var(--Text-Color, #7b7b7b);
+    font-family: Chillax;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
+
+.table-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 40px;
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.table-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.table-cell {
+  color: #1b2443;
+  font-size: 14px;
+  font-family: "Chillax", sans-serif;
+  flex: 1 1 0%;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* critical in flex layouts */
+  min-width: 0;
+}
+
+.no-results {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #999;
+}
+.mobileInfo {
+  display: none;
+  width: 0;
+}
+.tableText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  position: relative;
+}
+
+.ellipsis-icon {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.actions-dropdown {
+  position: absolute;
+  right: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.actions-dropdown button {
+  padding: 5px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.actions-dropdown button:hover {
+  border-radius: 6px;
+  background-color: #f0f0f0;
+}
+@media screen and (max-width: 768px) {
+  // styles/Table.scss
+  .table-container {
+    width: 100%;
+    background: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 30px 0px;
+  }
+
+  .table-header {
+    display: none;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background: unset;
+    width: 100%;
+    border-bottom: 1px solid #d9d9d9;
+    .table-cell {
+      color: var(--Text-Color, #7b7b7b);
+
+      /* Small Paragraph */
+      font-family: Chillax;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px; /* 128.571% */
+    }
+  }
+
+  .table-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: flex-start;
+    padding: 24px;
+    width: 100%;
+    border-bottom: unset;
+    gap: 8px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.06);
+  }
+
+  .table-cell {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: #1b2443;
+    font-size: 14px;
+    font-family: "Chillax", sans-serif;
+    width: 100%;
+    line-height: 18px;
+    word-wrap: break-word;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #999;
+  }
+  .tableText {
+    font-weight: 600;
+  }
+  .mobileInfo {
+    display: flex;
+    width: max-content;
+  }
+}

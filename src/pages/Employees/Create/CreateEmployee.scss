@@ -1,0 +1,8 @@
+.createButton {
+  width: 128px !important;
+}
+@media screen and (max-width: 768px) {
+  .createButton {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,432 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: -30px 20px;
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+}
+
+.chart-container,
+.stats-container {
+  height: 100%;
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+.chart-container-line {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+}
+
+.stats-container-cards {
+  display: flex;
+  flex: 1 1 60%;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+}
+.stats-container {
+  display: flex;
+  flex: 1 178.141%;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.stats-card {
+  background-color: #fff;
+
+  border-radius: 10px;
+  flex: 1 1 100px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+.stats-card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-card .value {
+  color: var(--black-100, #1c1c1c);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 200% */
+}
+
+.stats-card .change {
+  display: inline-flex;
+  height: 20px;
+  padding: 0px 2px 0px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.stats-card .change {
+  color: var(--Primary, #1b2443);
+  text-align: right;
+
+  /* Small Paragraph */
+  font-family: Chillax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+.title-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-dropdown h3 {
+  margin: 0;
+}
+
+.title-dropdown select {
+  background: transparent;
+  border: none;
+  color: #0074d9;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.recharts-bar-rectangle {
+  background: #000 !important;
+}
+.test {
+  background: red !important;
+}
+.recharts-legend-item {
+  border-radius: 7px;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  padding: 0px 5px;
+  align-items: center;
+  gap: 8px;
+}
+.recharts-legend-item-text {
+  color: var(--Primary, #1b2443) !important;
+
+  /* Small Paragraph */
+  font-family: Chillax !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 18px !important; /* 128.571% */
+}
+
+.custom-tooltip {
+  display: inline-flex;
+  padding: 9px 16px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px;
+  background: #081a51;
+  p {
+    color: #fff;
+    text-align: center;
+    font-family: Chillax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 128.571% */
+  }
+}
+
+.lineChartTopContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .boxes {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    .box {
+      display: flex;
+      width: 130px;
+      padding: 11px;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 5px;
+      .tagLine {
+        color: var(--Primary, #1b2443);
+        font-family: Chillax;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .boxNumbers {
+        color: var(--Primary, #1b2443);
+        font-family: Chillax;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      &:nth-child(1) {
+        background: #e6f2fe;
+      }
+      &:nth-child(2) {
+        background: #dcf6de;
+      }
+      &:nth-child(3) {
+        background: #ffe9f5;
+      }
+    }
+  }
+}
+.customToolTipLineLabel {
+  color: white;
+}
+.customToolTipLineText {
+  color: #b4baca;
+  span {
+    color: white;
+  }
+}
+.linechart {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: -30px 0px;
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+
+  .chart-container,
+  .stats-container {
+    height: 100%;
+
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+  }
+  .chart-container-line {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .stats-container-cards {
+    display: flex;
+    flex: 1 178.141%;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .stats-container {
+    display: flex;
+    flex: 1 178.141%;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .stats-card {
+    background-color: #fff;
+
+    border-radius: 10px;
+    flex: 1 1 100px;
+    padding: 10px 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  .stats-card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stats-card .value {
+    color: var(--black-100, #1c1c1c);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; /* 200% */
+  }
+
+  .stats-card .change {
+    display: inline-flex;
+    height: 20px;
+    padding: 0px 2px 0px 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .stats-card .change {
+    color: var(--Primary, #1b2443);
+    text-align: right;
+
+    /* Small Paragraph */
+    font-family: Chillax;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+  }
+
+  .title-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title-dropdown h3 {
+    margin: 0;
+  }
+
+  .title-dropdown select {
+    background: transparent;
+    border: none;
+    color: #0074d9;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  // .linechart {
+  //   display: none;
+  //   height: 0;
+  // }
+  .recharts-bar-rectangle {
+    background: #000 !important;
+  }
+  .test {
+    background: red !important;
+  }
+  .recharts-legend-item {
+    border-radius: 7px;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    padding: 0px 5px;
+    align-items: center;
+    gap: 8px;
+  }
+  .recharts-legend-item-text {
+    color: var(--Primary, #1b2443) !important;
+
+    /* Small Paragraph */
+    font-family: Chillax !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 18px !important; /* 128.571% */
+  }
+
+  .custom-tooltip {
+    display: inline-flex;
+    padding: 9px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 8px;
+    background: #081a51;
+    p {
+      color: #fff;
+      text-align: center;
+      font-family: Chillax;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px; /* 128.571% */
+    }
+  }
+
+  .lineChartTopContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    .boxes {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+      .box {
+        display: flex;
+        width: 100%;
+
+        padding: 11px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 5px;
+        .tagLine {
+          color: var(--Primary, #1b2443);
+          font-family: Chillax;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .boxNumbers {
+          color: var(--Primary, #1b2443);
+          font-family: Chillax;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        &:nth-child(1) {
+          background: #e6f2fe;
+        }
+        &:nth-child(2) {
+          background: #dcf6de;
+        }
+        &:nth-child(3) {
+          background: #ffe9f5;
+        }
+      }
+    }
+  }
+  .customToolTipLineLabel {
+    color: white;
+  }
+  .customToolTipLineText {
+    color: #b4baca;
+    span {
+      color: white;
+    }
+  }
+}

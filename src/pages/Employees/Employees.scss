@@ -1,0 +1,38 @@
+
+.actionsHeaderButtonsLeft {
+  display: flex;
+  align-items: flex;
+  gap: 15px;
+  width: fit-content;
+}
+
+.employeeCards {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  .actionsHeaderButtonsLeft {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: fit-content;
+    flex-direction: column;
+  }
+
+  .employeeCards {
+    padding: unset;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+  }
+}
