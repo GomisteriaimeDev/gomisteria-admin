@@ -1,7 +1,39 @@
 import React from "react";
 import "./Pagination.scss";
 
+// Build a compact page list: 1 … (cur-1) cur (cur+1) … last
+// `siblings` = how many pages to show on each side of the current page.
+const getPageItems = (
+  currentPage: number,
+  totalPages: number,
+  siblings = 1
+): Array<number | "dots"> => {
+  // Show all pages when there aren't enough to need truncation.
+  // (first + last + current + siblings*2 + 2 dot slots)
+  const totalToShow = siblings * 2 + 5;
+  if (totalPages <= totalToShow) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
+
+  const left = Math.max(currentPage - siblings, 1);
+  const right = Math.min(currentPage + siblings, totalPages);
+
+  const items: Array<number | "dots"> = [1];
+  if (left > 2) items.push("dots");
+  for (let p = left; p <= right; p++) {
+    if (p !== 1 && p !== totalPages) items.push(p);
+  }
+  if (right < totalPages - 1) items.push("dots");
+  items.push(totalPages);
+
+  return items;
+};
+
 const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
+  if (!totalPages || totalPages < 1) return null;
+
+  const pageItems = getPageItems(currentPage, totalPages);
+
   return (
     <div className="pagination">
       <button
@@ -22,15 +54,21 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
           />
         </svg>
       </button>
-      {[...Array(totalPages)].map((_, index) => (
-        <button
-          key={index}
-          className={`page-item ${index + 1 === currentPage ? "active" : ""}`}
-          onClick={() => onPageChange(index + 1)}
-        >
-          {index + 1}
-        </button>
-      ))}
+      {pageItems.map((item, index) =>
+        item === "dots" ? (
+          <span key={`dots-${index}`} className="page-dots">
+            …
+          </span>
+        ) : (
+          <button
+            key={item}
+            className={`page-item ${item === currentPage ? "active" : ""}`}
+            onClick={() => onPageChange(item)}
+          >
+            {item}
+          </button>
+        )
+      )}
       <button
         className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}
         onClick={() => onPageChange(currentPage + 1)}
