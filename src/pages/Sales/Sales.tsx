@@ -204,13 +204,48 @@ const Sales = () => {
   // Fetch orders with server-side pagination & status filter
   const fetchOrders = async (page: number, status: string) => {
     setIsLoading(true);
+    const statusParam = status === "ALL" ? undefined : status;
+    console.log("[Sales] fetchOrders → request", {
+      page,
+      limit: ORDERS_PER_PAGE,
+      sort: "updatedAt",
+      order: "desc",
+      status: statusParam,
+    });
     try {
-      const statusParam = status === "ALL" ? undefined : status;
-      const res = await getOrders(page, ORDERS_PER_PAGE, "updatedAt", "desc", statusParam);
-      setOrders(Array.isArray(res?.data) ? res.data : []);
+      const res = await getOrders(
+        page,
+        ORDERS_PER_PAGE,
+        "updatedAt",
+        "desc",
+        statusParam
+      );
+      console.log("[Sales] fetchOrders → raw response", res);
+
+      const data = Array.isArray(res?.data) ? res.data : [];
+      if (!Array.isArray(res?.data)) {
+        console.warn(
+          "[Sales] fetchOrders → res.data is not an array; got:",
+          typeof res?.data,
+          res?.data
+        );
+      }
+      console.log("[Sales] fetchOrders → parsed", {
+        ordersCount: data.length,
+        total: res?.total ?? 0,
+      });
+
+      setOrders(data);
       setTotalOrders(res?.total ?? 0);
-    } catch (e) {
-      console.error(e);
+    } catch (e: any) {
+      // Surface the real cause: status code + response body if present
+      console.error("[Sales] fetchOrders → FAILED", {
+        message: e?.message,
+        status: e?.response?.status,
+        statusText: e?.response?.statusText,
+        data: e?.response?.data,
+        url: e?.config?.url,
+      });
     } finally {
       setIsLoading(false);
     }
