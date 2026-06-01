@@ -455,6 +455,13 @@ export const saveAdminHomepageCms = async (payload: any): Promise<any> => {
   return response?.data ?? null;
 };
 
+// Triggers a manual product sync from ProData (admin only). Returns
+// { synced, count, skipped?, lastSyncAt }.
+export const syncProdataProducts = async (): Promise<any> => {
+  const response = await axiosInstance.post(`/prodata/sync`);
+  return response?.data ?? null;
+};
+
 export const uploadCmsImage = async (file: File, folder: string): Promise<any> => {
   const formData = new FormData();
   formData.append("image", file);

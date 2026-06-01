@@ -24,6 +24,7 @@ import PreorderDetails from "./pages/Preorders/Details/PreorderDetails";
 import Settings from "./pages/Settings/Settings";
 import Harte from "./pages/Businesses/Harte/Harte";
 import HomepageCms from "./pages/Cms/HomepageCms";
+import Sync from "./pages/Sync/Sync";
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
           <Route path="/employees/create" element={<CreateEmployee />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/cms" element={<HomepageCms />} />
+          <Route path="/sync" element={<Sync />} />
         </Route>
       </Routes>
     </div>

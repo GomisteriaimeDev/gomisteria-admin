@@ -252,6 +252,32 @@ const AdminSidebar = () => {
             CMS
           </a>
 
+          <a href="/sync" className={`navItem ${isActive("/sync")}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M21 12a9 9 0 0 1-9 9c-2.52 0-4.81-1.04-6.45-2.7M3 12a9 9 0 0 1 9-9c2.52 0 4.81 1.04 6.45 2.7"
+                stroke="#000"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3 4v4h4M21 20v-4h-4"
+                stroke="#000"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Sinkronizimi
+          </a>
+
           <a href="/settings" className={`navItem ${isActive("/settings")}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
