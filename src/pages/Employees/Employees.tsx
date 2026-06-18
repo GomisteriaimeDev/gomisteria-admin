@@ -73,7 +73,7 @@ const Employees = () => {
                 employeeImage={data?.Image[0]?.url}
                 employeeName={data?.specialFields?.fullName}
                 employeeCode={data?.specialFields?.idPunetorit}
-                orders={data.OrdersAssigned}
+                orders={data.OrdersAssigned || []}
               />
             ))}
           </div>

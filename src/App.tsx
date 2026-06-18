@@ -63,7 +63,7 @@ function App() {
           <Route path="/loads" element={<Ngarkesat />} />
           <Route path="/loads/:id" element={<NgarkesaDetails />} />
           <Route path="/employees" element={<Employees />} />
-          <Route path="/employees/:id" element={<EmployeeDetails />} />s
+          <Route path="/employees/:id" element={<EmployeeDetails />} />
           <Route path="/employees/create" element={<CreateEmployee />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/cms" element={<HomepageCms />} />
