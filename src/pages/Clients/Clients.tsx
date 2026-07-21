@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useState } from "react";
+import "./Clients.scss";
 import Dashboard from "../../layouts/Dashboard";
 import Table from "../../components/Table/Table";
 import useFetchData, { getClients } from "../../services/api";
@@ -95,6 +96,13 @@ const Clients = () => {
           <div className="dashboardHeader">
             <div className="actionsHeaderButtonsLeft">
               <h2>Klientët Privat</h2>
+              <div className="smsHeader">
+                {totalItems > 0 && (
+                  <span className="sms-credit-badge">
+                    Klientë Privat: {totalItems} Llogari
+                  </span>
+                )}
+              </div>
             </div>
           </div>
           <Table

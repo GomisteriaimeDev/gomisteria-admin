@@ -1,0 +1,17 @@
+.smsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sms-credit-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  white-space: nowrap;
+}

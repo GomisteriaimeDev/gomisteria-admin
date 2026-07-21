@@ -11,6 +11,7 @@ import useFetchData, {
   deactivateBusiness,
   forceActivateBusiness,
   getBusinesses,
+  getBusinessCountsByType,
   getSmsCredit,
   getSmsIntlCredit,
 } from "../../services/api";
@@ -65,16 +66,19 @@ const Businesses = () => {
 
   const [smsCredit, setSmsCredit] = useState<string | null>(null);
   const [smsIntlCredit, setSmsIntlCredit] = useState<string | null>(null);
+  const [businessTypeCounts, setBusinessTypeCounts] = useState<{ type: string; count: number }[]>([]);
 
 
   const fetchSmsCredit = useCallback(async () => {
     try {
-      const [local, intl] = await Promise.all([
+      const [local, intl, typeCounts] = await Promise.all([
         getSmsCredit(),
         getSmsIntlCredit(),
+        getBusinessCountsByType(),
       ]);
       setSmsCredit(local);
       setSmsIntlCredit(intl);
+      if (typeCounts) setBusinessTypeCounts(typeCounts);
     } catch (error) {
       console.error("Failed to fetch SMS credit:", error);
     }
@@ -345,6 +349,11 @@ const Businesses = () => {
             <div className="actionsHeaderButtonsLeft">
               <h2>Bizneset</h2>
               <div className="smsHeader">
+                {businessTypeCounts.map(({ type, count }) => (
+                  <span key={type} className="sms-credit-badge">
+                    Biznes {type}: {count} Llogari
+                  </span>
+                ))}
                 {smsCredit !== null && (
                   <span className="sms-credit-badge">
                     SMS Kredit: {smsCredit}

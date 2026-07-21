@@ -403,6 +403,11 @@ export const getActiveUsers = async (): Promise<any> => {
   return response?.data ?? null;
 };
 
+export const getBusinessCountsByType = async (): Promise<any> => {
+  const response = await axiosInstance.get('/statistics/business-counts-by-type');
+  return response?.data ?? null;
+};
+
 export const getDiscounts = async (): Promise<any> => {
   const response = await axiosInstance.get('/discount');
   return response?.data ?? null;
