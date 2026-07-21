@@ -408,6 +408,16 @@ export const getBusinessCountsByType = async (): Promise<any> => {
   return response?.data ?? null;
 };
 
+export const activateClient = async (id: string) => {
+  const response = await axiosInstance.put(`/users/activate/${id}`);
+  return response?.data ?? null;
+};
+
+export const deactivateClient = async (id: string) => {
+  const response = await axiosInstance.put(`/users/deactivate/${id}`);
+  return response?.data ?? null;
+};
+
 export const getDiscounts = async (): Promise<any> => {
   const response = await axiosInstance.get('/discount');
   return response?.data ?? null;

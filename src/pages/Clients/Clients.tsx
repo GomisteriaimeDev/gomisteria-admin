@@ -2,7 +2,8 @@ import React, { useCallback, useMemo, useState } from "react";
 import "./Clients.scss";
 import Dashboard from "../../layouts/Dashboard";
 import Table from "../../components/Table/Table";
-import useFetchData, { getClients } from "../../services/api";
+import ActionsDropdown, { TableAction } from "../../components/ActionsDropdown/ActionsDropdown";
+import useFetchData, { activateClient, deactivateClient, getClients } from "../../services/api";
 import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader";
 import useDebounce from "../../hooks/useDebounce";
@@ -10,6 +11,7 @@ import useDebounce from "../../hooks/useDebounce";
 const Clients = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchText, setSearchText] = useState("");
+  const [selectedRowIds, setSelectedRowIds] = useState<Array<string | number>>([]);
   const debouncedSearch = useDebounce(searchText, 400);
 
   const { data, isLoading } = useFetchData(
@@ -38,6 +40,40 @@ const Clients = () => {
     []
   );
 
+  const filteredData = useMemo(() => data?.data || [], [data]);
+
+  const actions: TableAction[] = [
+    { id: "activate", label: "Aktivizo të zgjedhurat", minSelected: 1 },
+    { id: "deactivate", label: "Çaktivizo të zgjedhurat", minSelected: 1 },
+    { id: "clear", label: "Pastro zgjedhjen", minSelected: 1 },
+  ];
+
+  const handleAction = async (actionId: string) => {
+    if (actionId === "clear") {
+      setSelectedRowIds([]);
+      return;
+    }
+
+    const selectedClients = filteredData.filter((c: any) =>
+      selectedRowIds.includes(c.id)
+    );
+
+    if (selectedClients.length === 0) return;
+
+    if (actionId === "activate") {
+      const ok = window.confirm(`Aktivizo ${selectedClients.length} klientë të zgjedhur?`);
+      if (!ok) return;
+      await Promise.all(selectedClients.map((c: any) => activateClient(c.id)));
+    } else if (actionId === "deactivate") {
+      const ok = window.confirm(`Çaktivizo ${selectedClients.length} klientë të zgjedhur?`);
+      if (!ok) return;
+      await Promise.all(selectedClients.map((c: any) => deactivateClient(c.id)));
+    }
+
+    setSelectedRowIds([]);
+    window.location.reload();
+  };
+
   const getStatusDot = (status: boolean) => {
     switch (status) {
       case true:
@@ -57,8 +93,6 @@ const Clients = () => {
     { title: "Statusi", searchable: true, width: "10%" },
     { title: "Regjistruar", searchable: false, width: "10%" },
   ];
-
-  const filteredData = useMemo(() => data?.data || [], [data]);
 
   const rows = filteredData.map((client: any) => ({
     id: client.id,
@@ -104,14 +138,28 @@ const Clients = () => {
                 )}
               </div>
             </div>
+            <div className="rightSide">
+              <div className="rightSideActions">
+                <ActionsDropdown
+                  label="Veprime:"
+                  actions={actions}
+                  selectedCount={selectedRowIds.length}
+                  onAction={handleAction}
+                />
+              </div>
+            </div>
           </div>
           <Table
             columns={columns}
             rows={rows}
-            enableSelection={false}
+            enableSelection
             enableGlobalSearch={false}
             onSearchChange={handleSearchChange}
             serverSideSearch
+            selectedRowIds={selectedRowIds}
+            onSelectedRowIdsChange={({ selectedRowIds: ids }) =>
+              setSelectedRowIds(ids)
+            }
           />
           <div className="paginationSection">
             <Pagination
