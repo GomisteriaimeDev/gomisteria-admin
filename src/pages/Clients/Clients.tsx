@@ -49,12 +49,12 @@ const Clients = () => {
   };
 
   const columns = [
-    { title: "ID", searchable: true },
-    { title: "Emri", searchable: true },
-    { title: "Email", searchable: true },
-    { title: "Numri Telefonit", searchable: true },
-    { title: "Statusi", searchable: true },
-    { title: "Regjistruar", searchable: false },
+    { title: "ID", searchable: true, width: "8%" },
+    { title: "Emri", searchable: true, width: "18%" },
+    { title: "Email", searchable: true, width: "24%" },
+    { title: "Numri Telefonit", searchable: true, width: "16%" },
+    { title: "Statusi", searchable: true, width: "10%" },
+    { title: "Regjistruar", searchable: false, width: "10%" },
   ];
 
   const filteredData = useMemo(() => data?.data || [], [data]);
@@ -101,6 +101,7 @@ const Clients = () => {
             columns={columns}
             rows={rows}
             enableSelection={false}
+            enableGlobalSearch={false}
             onSearchChange={handleSearchChange}
             serverSideSearch
           />
