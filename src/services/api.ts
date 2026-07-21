@@ -325,6 +325,17 @@ export const getEmployees = async (page?: number, limit?: number, sort?: string,
   const response = await axiosInstance.get(`/users/employees?${params.toString()}`);
   return response?.data ?? null;
 };
+export const getClients = async (page?: number, limit?: number, sort?: string, order?: 'asc' | 'desc', status?: string, search?: string): Promise<any> => {
+  const params = new URLSearchParams();
+  if (page !== undefined) params.append('page', String(page));
+  if (limit !== undefined) params.append('limit', String(limit));
+  if (sort) params.append('sort', sort);
+  if (order) params.append('order', order);
+  if (search) params.append('search', search);
+  const response = await axiosInstance.get(`/users/clients?${params.toString()}`);
+  return response?.data ?? null;
+};
+
 export const getEmployeesList = async (page?: number, limit?: number, sort?: string, order?: 'asc' | 'desc',): Promise<any> => {
   const response = await axiosInstance.get(`/users/employees`);
   return response?.data ?? null;

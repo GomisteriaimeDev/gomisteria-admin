@@ -25,6 +25,7 @@ import Settings from "./pages/Settings/Settings";
 import Harte from "./pages/Businesses/Harte/Harte";
 import HomepageCms from "./pages/Cms/HomepageCms";
 import Sync from "./pages/Sync/Sync";
+import Clients from "./pages/Clients/Clients";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/reservations/:id" element={<PreorderDetails />} />
           <Route path="/loads" element={<Ngarkesat />} />
           <Route path="/loads/:id" element={<NgarkesaDetails />} />
+          <Route path="/clients" element={<Clients />} />
           <Route path="/employees" element={<Employees />} />
           <Route path="/employees/:id" element={<EmployeeDetails />} />
           <Route path="/employees/create" element={<CreateEmployee />} />

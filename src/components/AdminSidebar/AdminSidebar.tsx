@@ -141,6 +141,21 @@ const AdminSidebar = () => {
             </svg>
             Bizneset
           </a>
+          <a href="/clients" className={`navItem ${isActive("/clients")}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <path
+                d="M10 10.5C12.2091 10.5 14 8.70914 14 6.5C14 4.29086 12.2091 2.5 10 2.5C7.79086 2.5 6 4.29086 6 6.5C6 8.70914 7.79086 10.5 10 10.5ZM10 12.5C7.33 12.5 2 13.84 2 16.5V18.5H18V16.5C18 13.84 12.67 12.5 10 12.5Z"
+                fill="#000"
+              />
+            </svg>
+            Klientët
+          </a>
           <a href="/services" className={`navItem ${isActive("/services")}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
