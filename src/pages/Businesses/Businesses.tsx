@@ -71,16 +71,17 @@ const Businesses = () => {
 
   const fetchSmsCredit = useCallback(async () => {
     try {
-      const [local, intl, typeCounts] = await Promise.all([
-        getSmsCredit(),
-        getSmsIntlCredit(),
-        getBusinessCountsByType(),
-      ]);
+      const [local, intl] = await Promise.all([getSmsCredit(), getSmsIntlCredit()]);
       setSmsCredit(local);
       setSmsIntlCredit(intl);
-      if (typeCounts) setBusinessTypeCounts(typeCounts);
     } catch (error) {
       console.error("Failed to fetch SMS credit:", error);
+    }
+    try {
+      const typeCounts = await getBusinessCountsByType();
+      if (typeCounts) setBusinessTypeCounts(typeCounts);
+    } catch (error) {
+      console.error("Failed to fetch business type counts:", error);
     }
   }, []);
 
