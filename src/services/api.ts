@@ -500,3 +500,48 @@ export const uploadCmsImage = async (file: File, folder: string): Promise<any> =
 
   return response?.data ?? null;
 };
+
+/* ── PARTNER API KEYS (product feed) ────────────────────────────────────────── */
+// Third parties (Gjirafa and any future marketplace) read the product feed with an
+// API key. Each key carries its own discount rate, applied server-side.
+
+export const getApiKeys = async (): Promise<any> => {
+  const response = await axiosInstance.get('/admin/api-keys');
+  return response?.data ?? null;
+};
+
+// The only response that ever contains the plaintext key. It cannot be read back
+// afterwards — if the UI loses it, the key must be regenerated.
+export const createApiKey = async (payload: {
+  name: string;
+  discountPercent: number;
+}): Promise<any> => {
+  const response = await axiosInstance.post('/admin/api-keys', payload);
+  return response?.data ?? null;
+};
+
+export const updateApiKey = async (
+  id: string,
+  payload: { name?: string; discountPercent?: number; isActive?: boolean }
+): Promise<any> => {
+  const response = await axiosInstance.patch(`/admin/api-keys/${id}`, payload);
+  return response?.data ?? null;
+};
+
+// Issues a fresh key and kills the old one, keeping the partner's name and rate.
+// Also returns the plaintext key exactly once.
+export const regenerateApiKey = async (id: string): Promise<any> => {
+  const response = await axiosInstance.post(`/admin/api-keys/${id}/regenerate`);
+  return response?.data ?? null;
+};
+
+export const deleteApiKey = async (id: string): Promise<any> => {
+  const response = await axiosInstance.delete(`/admin/api-keys/${id}`);
+  return response?.data ?? null;
+};
+
+// How many products actually reach the marketplace, and why the rest do not.
+export const getFeedReport = async (): Promise<any> => {
+  const response = await axiosInstance.get('/admin/feed/report');
+  return response?.data ?? null;
+};

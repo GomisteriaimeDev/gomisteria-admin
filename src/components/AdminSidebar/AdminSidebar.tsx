@@ -293,6 +293,26 @@ const AdminSidebar = () => {
             Sinkronizimi
           </a>
 
+          <a href="/api-keys" className={`navItem ${isActive("/api-keys")}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M15 7a4 4 0 1 1-3.87 5H8v2H6v2H3v-3l5.13-5.13A4 4 0 0 1 15 7Z"
+                stroke="#000"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="16.5" cy="10.5" r="1" fill="#000" />
+            </svg>
+            Partnerët API
+          </a>
+
           <a href="/settings" className={`navItem ${isActive("/settings")}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

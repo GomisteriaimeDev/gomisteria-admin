@@ -1,0 +1,227 @@
+.apiKeysWrapper {
+  width: 100%;
+
+  .dashboardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .apiKeysError {
+    background: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f5c2c0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+
+  .apiKeysEmpty {
+    text-align: center;
+    color: #6b7280;
+    padding: 24px 0;
+  }
+
+  .keyPrefix {
+    background: #f3f4f6;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 13px;
+  }
+
+  .statusActive {
+    color: #1a7f37;
+    font-weight: 600;
+  }
+
+  .statusInactive {
+    color: #9ca3af;
+    font-weight: 600;
+  }
+
+  .rowActions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+
+    button {
+      border: 1px solid #d1d5db;
+      background: #fff;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 13px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #1e8ca5;
+        color: #1e8ca5;
+      }
+
+      &.danger:hover {
+        border-color: #b3261e;
+        color: #b3261e;
+      }
+    }
+  }
+
+  // Feed eligibility summary. Answers "why does the marketplace only show N
+  // products" without needing a developer.
+  .feedSummary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: stretch;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+
+    .feedStat {
+      display: flex;
+      flex-direction: column;
+      min-width: 130px;
+
+      .feedStatValue {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1e8ca5;
+      }
+
+      .feedStatLabel {
+        font-size: 13px;
+        color: #6b7280;
+      }
+    }
+
+    .feedReasons {
+      flex: 1;
+      min-width: 240px;
+      border-left: 1px solid #e5e7eb;
+      padding-left: 16px;
+
+      h4 {
+        margin: 0 0 8px;
+        font-size: 13px;
+        color: #6b7280;
+        font-weight: 600;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+          padding: 2px 0;
+        }
+      }
+    }
+  }
+}
+
+.apiKeysWrapper + .modal,
+.modal {
+  .modalContent {
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .checkboxRow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      input {
+        width: auto;
+        margin: 0;
+      }
+    }
+
+    .confirmText {
+      text-align: left;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .modalActions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+
+      button {
+        border: 1px solid #d1d5db;
+        background: #fff;
+
+        &.primaryAction {
+          background: #1e8ca5;
+          border-color: #1e8ca5;
+          color: #fff;
+        }
+
+        &.danger {
+          background: #b3261e;
+          border-color: #b3261e;
+          color: #fff;
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .keyReveal {
+    .keyWarning {
+      text-align: left;
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+    }
+
+    .keyBox {
+      background: #111827;
+      border-radius: 6px;
+      padding: 14px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+
+      code {
+        color: #e5e7eb;
+        font-size: 13px;
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+.primaryAction {
+  background: #1e8ca5;
+  color: #fff;
+  border: 1px solid #1e8ca5;
+  border-radius: 4px;
+  padding: 9px 16px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

@@ -26,6 +26,7 @@ import Harte from "./pages/Businesses/Harte/Harte";
 import HomepageCms from "./pages/Cms/HomepageCms";
 import Sync from "./pages/Sync/Sync";
 import Clients from "./pages/Clients/Clients";
+import ApiKeys from "./pages/ApiKeys/ApiKeys";
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/cms" element={<HomepageCms />} />
           <Route path="/sync" element={<Sync />} />
+          <Route path="/api-keys" element={<ApiKeys />} />
         </Route>
       </Routes>
     </div>
